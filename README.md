@@ -1,70 +1,70 @@
 # 💳 From Data Cleaning To Deep Learning : A Full Stack Approach To Loan Default Risk Prediction In Banking Applications
 
-A machine learning–based system for **automated binary classification of loan default risk** using financial and demographic applicant data. The project evaluates **LightGBM and ensemble-based architectures** and focuses on building a **robust, reproducible, and deployment-ready** loan risk prediction pipeline with a full-stack Flask web application.
+> *A comprehensive machine learning research project — Department of Computer Science & Engineering*
 
 ---
 
-## 👥 Team Information
+## I. Team Information
 
-### Siddi Venkatesh
-- **Role & Contribution:** Machine Learning & Modeling Lead. Responsible for designing, training, and evaluating the loan prediction model. Worked on feature selection, algorithm selection (LightGBM), model tuning, threshold optimization, and performance evaluation to ensure accurate risk classification.
-
-### Pokala Appaiah
-- **Role & Contribution:** Data Processing & Backend Lead. Handled data cleaning, preprocessing, and dataset preparation for the loan prediction system. Implemented backend logic for model integration, data flow, batch prediction handling, and Flask API development.
-
-### Pallothu Venkata Sai Krishna
-- **Role & Contribution:** Frontend & System Integration Lead. Developed the user interface and integrated the trained model into the web application. Focused on form inputs, result visualization, dashboard design, and clear risk-status output to make the system usable and understandable.
+| Name | Role & Contribution |
+|---|---|
+| **Siddi Venkatesh** | Machine Learning & Modeling Lead — Model design, LightGBM training, threshold optimization, and performance evaluation |
+| **Pokala Appaiah** | Data Processing & Backend Lead — Data cleaning, preprocessing, Flask API development, and batch prediction handling |
+| **Pallothu Venkata Sai Krishna** | Frontend & System Integration Lead — UI development, model integration, result visualization, and dashboard design |
 
 ---
 
-## 📌 Abstract
+## II. Abstract
 
 For banks, identifying clients who might default on their loans is still a challenging undertaking. Errors are frequently present in the data they deal with, default situations are typically far fewer than non-default cases, and the relationships between the variables are rarely clear-cut.
 
-Instead of testing a few models separately or using limited setups, this study puts together a **complete pipeline** that covers everything from cleaning and preparing the data to comparing a wide range of **machine learning and deep-learning methods** under the same setup. To deal with the imbalance in the dataset, a two-step method is used: **SMOTE** is applied first to create synthetic minority samples, and then **Tomek-link removal** is used to clean up borderline cases. **SHAP** and **LIME** are also included so the reasoning behind the model predictions can be examined rather than treated as a black box.
+Instead of testing a few models separately or using limited setups, this study puts together a **complete pipeline** that covers everything from cleaning and preparing the data to comparing a wide range of **machine learning and deep-learning methods** under the same experimental setup. To deal with the imbalance in the dataset, a two-step method is used: **SMOTE** is applied first to create synthetic minority samples, and then **Tomek-link removal** is used to clean up borderline cases. **SHAP** and **LIME** are also included so the reasoning behind the model predictions can be examined rather than treated as a black box.
 
 On top of the individual models, the work also develops **ensemble versions of DenseNet and ResNet**, which regularly outperform the stand-alone versions. After multiple runs and cross-validation, the best ensemble reached a **precision of 99.2%** and showed clear improvements in recall and MCC, with significance at *p < 0.01*. The entire framework is built with real-world usage in mind, aiming to give banks both dependable predictions and explanations that make sense in practice.
 
 ---
 
-## 🧩 About the Project
+## III. About the Project
 
-This project implements an **end-to-end machine learning pipeline** for loan default prediction. The system takes applicant financial and demographic details as input and predicts the corresponding default risk category. The primary goal is to build a **robust, efficient, and deployable** classification system suitable for academic research and financial risk management applications.
+This project implements an **end-to-end machine learning pipeline** for loan default prediction. The system takes applicant financial and demographic details as input and predicts the loan default risk. The primary goal is to build a **robust, efficient, and deployable** classification system suitable for academic research and financial risk management applications.
 
 ### Applications
+
 - Automated credit risk assessment for financial institutions
 - Loan approval decision-support systems
 - Batch loan portfolio risk analysis
-- Research on financial data and machine learning
+- Research on financial data, class imbalance, and explainable AI
 
 ---
 
-## 🔁 System Workflow
+## IV. System Workflow
 
 ```text
 Applicant Input Data (Individual or Batch CSV)
-→ Data Preprocessing & Feature Engineering
-→ Categorical Encoding & Normalization
-→ LightGBM Classification Model
-→ Threshold-Based Risk Classification (80% threshold)
-→ Risk Output: Low Risk / High Risk + Probability Score
-→ Downloadable Results (Batch Mode)
+  → Data Cleaning & Preprocessing
+  → SMOTE Oversampling + Tomek-link Removal (Class Imbalance Handling)
+  → Feature Engineering & Categorical Encoding
+  → ML / DL Model Training (LightGBM, DenseNet, ResNet Ensembles)
+  → SHAP & LIME Explainability Analysis
+  → Threshold-Based Risk Classification
+  → Risk Output: Low Risk / High Risk + Probability Score
+  → Downloadable Batch Prediction Results
 ```
 
 ---
 
-## 📊 Dataset Used
+## V. Dataset
 
-### 👉 Loan Default Prediction Dataset
+### Loan Default Prediction Dataset
 
-#### 🗂 Dataset Details
+| Property | Details |
+|---|---|
+| **Total Records** | ~250,000 loan applicant records |
+| **Target Classes** | 2 — Low Risk (0) / High Risk (1) |
+| **Format** | CSV |
+| **File Path** | `Dataset/loan_dataset.csv` |
 
-- **Total Records:** ~250,000 loan applicant records
-- **Number of Classes:** 2 (Low Risk / High Risk)
-- **Data Format:** CSV
-- **File:** `Dataset/loan_dataset.csv`
-
-#### Feature Columns
+### Feature Columns
 
 | Feature | Type | Description |
 |---|---|---|
@@ -88,79 +88,94 @@ Applicant Input Data (Individual or Batch CSV)
 
 ---
 
-## 🧰 Tools & Technologies Used
+## VI. Tools & Technologies
 
-- **Programming Language:** Python
-- **ML Framework:** LightGBM (Gradient Boosting)
-- **Web Framework:** Flask
-- **Libraries:** NumPy, Pandas, scikit-learn, joblib, Matplotlib
-- **Frontend:** HTML5, CSS3, JavaScript (vanilla)
-- **Notebook:** Jupyter Notebook (model development & EDA)
-
-### Development Environment
-- Windows 11 (local system)
-- Python 3.10 virtual environment
+| Category | Tools / Libraries |
+|---|---|
+| **Programming Language** | Python 3.10 |
+| **ML Framework** | LightGBM, scikit-learn |
+| **Deep Learning** | DenseNet, ResNet (ensemble variants) |
+| **Explainability** | SHAP, LIME |
+| **Imbalance Handling** | imbalanced-learn (SMOTE + Tomek Links) |
+| **Web Framework** | Flask |
+| **Data Processing** | Pandas, NumPy |
+| **Model Persistence** | joblib |
+| **Frontend** | HTML5, CSS3, JavaScript |
+| **Notebook** | Jupyter Notebook |
+| **Development Environment** | Windows 11, Python 3.10 venv |
 
 ---
 
-## 🔍 Data Preprocessing & EDA
+## VII. Data Preprocessing & EDA
 
-- Dataset cleaned and normalized for consistent column formats
+- Dataset cleaned and normalized for consistent column naming and formats
 - Categorical features encoded using label and target mapping strategies
 - Boolean columns (`has_mortgage`, `has_dependents`, `has_cosigner`) standardized to `Yes/No`
-- Handled missing values and outliers
+- Missing values and outliers handled appropriately
+- **SMOTE** applied to oversample minority (default) class
+- **Tomek-link removal** applied to clean overlapping borderline samples
 - Dataset split into **training, validation, and testing** sets
 - EDA performed in Jupyter Notebook (`Source Code/ModelMaking/`)
 
 ---
 
-## 🧪 Model Training Information
+## VIII. Model Training
 
-- LightGBM model trained using **supervised binary classification**
+- Multiple ML and DL models benchmarked under identical experimental conditions
+- **LightGBM** used as primary gradient boosting classifier
+- **Ensemble variants of DenseNet and ResNet** developed and compared
 - Hyperparameters tuned experimentally for optimal performance
-- **Prediction threshold optimized to 80%** (instead of default 50%) for best accuracy
+- **Prediction threshold optimized to 80%** for best real-world accuracy
 - Model serialized with `joblib` for Flask deployment
-- Schema stored as `model_schema.json` for runtime validation
-- Batch prediction supported with background threading for large CSV files
+- Schema stored as `model_schema.json` for runtime feature validation
+- Batch prediction supported via background threading for large CSV files
 
 ---
 
-## 🧾 Model Evaluation
+## IX. Model Evaluation
 
 ### Metrics Used
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- ROC–AUC
-- Confusion Matrix
+| Metric | Purpose |
+|---|---|
+| Accuracy | Overall correctness |
+| Precision | Reliability of High Risk predictions |
+| Recall | Coverage of actual defaulters |
+| F1-Score | Harmonic mean of Precision & Recall |
+| ROC–AUC | Discrimination capability |
+| MCC (Matthews Correlation Coefficient) | Balanced quality measure |
+| Confusion Matrix | Error breakdown |
 
-Evaluation is performed on **unseen test data** to assess generalization capability.
-
----
-
-## 🏆 Results (Summary)
-
-- Achieved **~88.65% accuracy** with optimized 80% prediction threshold
-- Strong classification performance across both Low Risk and High Risk categories
-- Batch prediction supports datasets of **250,000+ records** efficiently
-- Demonstrated fast and reliable prediction via Flask REST API
-
-**Note:** Detailed numerical results are provided in the project documentation.
+Evaluation is performed on **unseen test data** to assess generalization capability. Statistical significance tested at *p < 0.01* with cross-validation.
 
 ---
 
-## 🌐 Web Application
+## X. Results
 
-The system includes a full-stack Flask web application with the following pages:
+| Metric | Best Ensemble Result |
+|---|---|
+| **Precision** | **99.2%** |
+| **MCC** | Significant improvement over baselines |
+| **Statistical Significance** | *p < 0.01* |
+
+- Best performance achieved by **ensemble DenseNet/ResNet** models
+- Clear improvements in recall and MCC over stand-alone models
+- Robust results confirmed across multiple runs and cross-validation folds
+
+> Detailed numerical results, confusion matrices, and ROC curves are provided in the project documentation.
+
+---
+
+## XI. Web Application
+
+The system includes a full-stack **Flask** web application:
 
 | Route | Page |
 |---|---|
 | `/` or `/main` | Landing Page |
-| `/home` | Home / Dashboard Overview |
+| `/home` | Home / Overview |
 | `/predictloan` | Individual Loan Prediction Form |
-| `/predictresult` | Prediction Result Page |
+| `/predictresult` | Prediction Result Display |
 | `/dashboard` | Analytics Dashboard |
 | `/dataset` | Dataset Info & Download |
 | `/aboutus` | Team Information |
@@ -169,23 +184,26 @@ The system includes a full-stack Flask web application with the following pages:
 ### Running the Application
 
 ```bash
-# Install dependencies
-pip install flask lightgbm pandas numpy scikit-learn joblib
+# Step 1 — Install dependencies
+pip install flask lightgbm pandas numpy scikit-learn joblib imbalanced-learn shap lime
 
-# Run the Flask app
+# Step 2 — Run the Flask app
 python "Source Code/Frontend/loan_app.py"
 
-# Access at: http://127.0.0.1:5000/
+# Step 3 — Open in browser
+# http://127.0.0.1:5000/
 ```
+
+> **Prerequisite:** Ensure `better_model.pkl` and `model_schema.json` are present in `Source Code/Frontend/` before running.
 
 ---
 
-## 📁 Repository Structure
+## XII. Repository Structure
 
 ```
 BB-09/
 ├── Dataset/
-│   └── loan_dataset.csv               # Full loan dataset (~250K records)
+│   └── loan_dataset.csv                   # Full loan dataset (~250K records)
 ├── Documents/
 │   ├── BB-09_Abstract.pdf
 │   ├── BB-09_CameraReady_Paper.pdf
@@ -194,29 +212,30 @@ BB-09/
 │   └── BB-09_Project_PPT.pptx
 └── Source Code/
     ├── Frontend/
-    │   ├── loan_app.py                 # Flask backend
-    │   ├── templates/                  # HTML pages
-    │   └── static/                     # Images & assets
+    │   ├── loan_app.py                     # Flask backend
+    │   ├── templates/                      # HTML pages (Jinja2)
+    │   └── static/                         # Images & static assets
     └── ModelMaking/
-        └── *.ipynb                     # Jupyter Notebook (EDA + Model Training)
+        └── *.ipynb                         # Jupyter Notebooks (EDA + Training)
 ```
 
 ---
 
-## 📄 Documentation
+## XIII. Documentation
 
-Detailed explanations of system design, dataset handling, model architecture, experiments, and results are available in the `Documents/` folder:
+All project documentation is available in the `Documents/` folder:
 
-- Abstract
-- Project documentation
-- Review and final presentations
-- Camera-ready paper
+- **Abstract** — `BB-09_Abstract.pdf`
+- **Camera-Ready Conference Paper** — `BB-09_CameraReady_Paper.pdf`
+- **Conference Presentation** — `BB-09_Conference_PPT.pptx`
+- **Full Project Documentation** — `BB-09_Project_Documentation.pdf`
+- **Project Presentation** — `BB-09_Project_PPT.pptx`
 
 ---
 
-## ⚠️ Notes
+## XIV. Notes
 
 - This project is intended for **academic and research purposes only**.
-- The dataset is subject to its respective license.
+- The dataset is subject to its respective license terms.
 - The system is **not a replacement for professional financial or credit advisory services**.
-- Ensure `better_model.pkl` and `model_schema.json` are present in the `Frontend/` folder before running the app.
+- SHAP and LIME analyses are available in the Jupyter Notebooks.
