@@ -1,4 +1,4 @@
-# 💳 Predictive Modeling and Performance Analysis of Loan Default Data
+# 💳 From Data Cleaning To Deep Learning : A Full Stack Approach To Loan Default Risk Prediction In Banking Applications
 
 A machine learning–based system for **automated binary classification of loan default risk** using financial and demographic applicant data. The project evaluates **LightGBM and ensemble-based architectures** and focuses on building a **robust, reproducible, and deployment-ready** loan risk prediction pipeline with a full-stack Flask web application.
 
