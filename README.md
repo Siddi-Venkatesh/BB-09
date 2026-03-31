@@ -19,7 +19,11 @@ A machine learning–based system for **automated binary classification of loan 
 
 ## 📌 Abstract
 
-Loan default prediction is a critical task in the financial sector; however, manual assessment of creditworthiness is time-consuming and prone to human bias. This project presents a machine learning–based system for **automated binary classification of loan default risk** using structured financial data. The proposed approach leverages gradient boosting techniques to classify loan applicants as **Low Risk** or **High Risk**. The system addresses key challenges such as **class imbalance**, **threshold optimization**, and **real-world deployment**, achieving **~88.65% accuracy** with an optimized prediction threshold suitable for financial decision-support applications.
+For banks, identifying clients who might default on their loans is still a challenging undertaking. Errors are frequently present in the data they deal with, default situations are typically far fewer than non-default cases, and the relationships between the variables are rarely clear-cut.
+
+Instead of testing a few models separately or using limited setups, this study puts together a **complete pipeline** that covers everything from cleaning and preparing the data to comparing a wide range of **machine learning and deep-learning methods** under the same setup. To deal with the imbalance in the dataset, a two-step method is used: **SMOTE** is applied first to create synthetic minority samples, and then **Tomek-link removal** is used to clean up borderline cases. **SHAP** and **LIME** are also included so the reasoning behind the model predictions can be examined rather than treated as a black box.
+
+On top of the individual models, the work also develops **ensemble versions of DenseNet and ResNet**, which regularly outperform the stand-alone versions. After multiple runs and cross-validation, the best ensemble reached a **precision of 99.2%** and showed clear improvements in recall and MCC, with significance at *p < 0.01*. The entire framework is built with real-world usage in mind, aiming to give banks both dependable predictions and explanations that make sense in practice.
 
 ---
 
